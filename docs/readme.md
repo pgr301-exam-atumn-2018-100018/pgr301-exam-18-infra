@@ -2,17 +2,40 @@
 
 Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 2018 by candidate number: 100018
 
-1. [ Attempted Features ](#AttemptedFeatures)
-2. [ Reflections ](#Reflections)
-3. [ References ](#References)
+1. [  Instructions ](#Instructions)
+2. [ Attempted Features ](#AttemptedFeatures)
+3. [ Reflections ](#Reflections)
+4. [ References ](#References)
+
+
+<a name="Instructions"></a>
+## 1. Instructions
+
+##### Run the app manually:
+1. Stop any running applications that run on port 8080
+2. Run the Application class, generate target
+3. Spring-boot:run
+4. Go to one of the endpoints listed below
+
+http://localhost:8080/add-item?item=Go skydiving
+http://localhost:8080/get-list
+http://localhost:8080/get-item?id=1
+http://localhost:8080/update-item?id=1&item=Dance all the Fortnite dances
+http://localhost:8080/delete-item?id=1
+http://localhost:8080/delete-all
+
+##### Testing:
+1. Run "spring-boot:run" in Maven
+2. Run tests
+
 
 <a name="AttemptedFeatures"></a>
-## 1. Attempted Features
+## 2. Attempted Features
 
 
 
 <a name="Reflections"></a>
-## 2. Reflections
+## 3. Reflections
 
 ##### On the app:
 I didn't expect to made an API for this exam so It caught me off guard and delayed the plans I had. 
@@ -27,7 +50,7 @@ Some of the test where the appropriate status code would be "201 created" result
 This is due to poor implementation of the API. Luckily though, the API is not the focus in the exam.
 
 <a name="References"></a>
-## 3. References
+## 4. References
 
 
 ##### App references:
