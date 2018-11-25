@@ -23,7 +23,8 @@ The links to these sites are of course listed under [References](#References)
 I also had to do some things to jerryrig the app toghether, that aren't in line with what we've been though is good code practise. 
 One example is that I used a test method to clear the data in the map (IMDB) in the @Before method. 
 Ideally you shouldn't rely on tests or network methods to perform utility operations like resetting variables or databases, but with API you sort of have to.
-
+Some of the test where the appropriate status code would be "201 created" results in an error, will fail since the status code is 200. 
+This is due to poor implementation of the API. Luckily though, the API is not the focus in the exam.
 
 <a name="References"></a>
 ## 3. References
