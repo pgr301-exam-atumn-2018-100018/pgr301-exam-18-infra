@@ -17,12 +17,12 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 3. Spring-boot:run
 4. Go to one of the endpoints listed below
 
-http://localhost:8080/add-item?item=Go skydiving
-http://localhost:8080/get-list
-http://localhost:8080/get-item?id=1
-http://localhost:8080/update-item?id=1&item=Dance all the Fortnite dances
-http://localhost:8080/delete-item?id=1
-http://localhost:8080/delete-all
+ - http://localhost:8080/add-item?item=Go skydiving
+ - http://localhost:8080/get-list
+ - http://localhost:8080/get-item?id=1
+ - http://localhost:8080/update-item?id=1&item=Dance all the Fortnite dances
+ - http://localhost:8080/delete-item?id=1
+ - http://localhost:8080/delete-all
 
 ##### Testing:
 1. Run "spring-boot:run" in Maven
