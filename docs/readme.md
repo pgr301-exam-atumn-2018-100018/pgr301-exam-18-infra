@@ -14,7 +14,7 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 ##### Run the app manually:
 1. Stop any running applications that run on port 8080
 2. Run the Application class, generate target
-3. Spring-boot:run
+3. Maven: "spring-boot:run"
 4. Go to one of the endpoints listed below
 
  - http://localhost:8080/add-item?item=Go skydiving
@@ -25,7 +25,7 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
  - http://localhost:8080/delete-all
 
 ##### Testing:
-1. Run "spring-boot:run" in Maven
+1. Maven: "spring-boot:run"
 2. Run tests
 
 
