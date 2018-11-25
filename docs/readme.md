@@ -14,7 +14,7 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 <a name="Reflections"></a>
 ## 2. Reflections
 
-# On the app:
+##### On the app:
 I didn't expect to made an API for this exam so It caught me off guard and delayed the plans I had. 
 Anyways, since we've had other courses where we make APIs this semester I had some code I could lean on to fast track the development. 
 Since the other courses don't use Java I didn't actually use any code, just looked at the structure. 
@@ -29,7 +29,7 @@ Ideally you shouldn't rely on tests or network methods to perform utility operat
 ## 3. References
 
 
-# App references:
+##### App references:
 
 General pointers to make API from Spring.io:
 https://spring.io/guides/gs/rest-service/
