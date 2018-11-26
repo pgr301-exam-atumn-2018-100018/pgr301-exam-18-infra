@@ -11,6 +11,10 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 <a name="Instructions"></a>
 ## 1. Instructions
 
+##### Set up infrastructure:
+1. Replace the names and URIs in concourse/pipeline.yml
+2. 
+
 ##### Run the app manually:
 1. Stop any running applications that run on port 8080
 2. Run the Application class, generate target
