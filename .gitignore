@@ -7,3 +7,6 @@ credentials
 statuscake.tf
 provider_heroku.tf
 pipeline.yml
+concourse/pipeline.yml
+terraform/provider_heroku.tf
+terraform/statuscake.tf
