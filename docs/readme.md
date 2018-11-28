@@ -41,6 +41,9 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 <a name="Reflections"></a>
 ## 3. Reflections
 
+##### Infra:
+Stuck on pipeline.yml for a while, got mixed up with use of infra/app in ci-file.
+
 ##### On the app:
 I didn't expect to made an API for this exam so It caught me off guard and delayed the plans I had. 
 Anyways, since we've had other courses where we make APIs this semester I had some code I could lean on to fast track the development. 

@@ -6,7 +6,7 @@ jobs:
       trigger: true
     - get: #TODO-replace-with-infra
   - task: sync_heroku
-    file: #TODO-replace-with-app /concourse/heroku/heroku_sync.yml
+    file: #TODO-replace-with-infra /concourse/heroku/heroku_sync.yml
     input_mapping: {source: #TODO-replace-with-app}
     params:
       app_name: ((heroku_app_name))
