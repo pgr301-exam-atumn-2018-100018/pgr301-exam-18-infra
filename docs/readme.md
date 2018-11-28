@@ -12,7 +12,7 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 ## 1. Instructions
 
 ##### Set up infrastructure:
-1. Replace the names and URIs in concourse/pipeline.yml
+1. Replace the names and URIs the project. For simplicity, all name/URI variables have been tagged with "TODO", which will automatically pop up in the tab named "TODO" in the bottom of IntelliJ
 2. 
 
 ##### Run the app manually:
@@ -29,8 +29,9 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
  - http://localhost:8080/delete-all
 
 ##### Testing:
-1. Maven: "spring-boot:run"
-2. Run tests
+1. Run Application
+2. Maven: "spring-boot:run"
+3. Run tests
 
 
 <a name="AttemptedFeatures"></a>
