@@ -1,12 +1,7 @@
 
 .idea/
-credentials.yml
 
-
-credentials
-statuscake.tf
-provider_heroku.tf
-pipeline.yml
-concourse/pipeline.yml
-terraform/provider_heroku.tf
-terraform/statuscake.tf
+**/credentials*
+**/pipeline.yml
+**/provider_heroku.tf
+**/statuscake.tf
