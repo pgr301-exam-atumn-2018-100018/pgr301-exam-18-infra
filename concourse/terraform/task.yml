@@ -8,6 +8,8 @@ image_resource:
 
 inputs:
 - name: source
+- name: pgr301-exam-18-infra
+
 outputs:
 - name: with-state
 
@@ -21,7 +23,7 @@ params:
   lock_timeout: 5m
   github_token: ((github_token))
 run:
-  path: ./source/concourse/terraform/terraform.sh
+  path: ./pgr301-exam-18-infra/concourse/terraform/terraform.sh
 
 #Premission denied, anything else is file not found
 #run:
