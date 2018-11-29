@@ -21,9 +21,10 @@ params:
   cache: "false"
   lock_timeout: 5m
   github_token: ((github_token))
+
 run:
   path: bash
-  args: [chmod 101 source/concourse/terraform/terraform.sh]
+  args: [chmod 101 ./source/concourse/terraform/terraform.sh]
 run:
   path: source/concourse/terraform/terraform.sh
 
