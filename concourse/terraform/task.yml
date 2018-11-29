@@ -8,7 +8,6 @@ image_resource:
 
 inputs:
 - name: source
-RUN: chmod +x /cmd.sh
 outputs:
 - name: with-state
 
@@ -16,7 +15,7 @@ caches:
 - path: terraform-cache
 
 params:
-  command:
+  command: chmod +x /cmd.sh
   directories:
   cache: "false"
   lock_timeout: 5m
