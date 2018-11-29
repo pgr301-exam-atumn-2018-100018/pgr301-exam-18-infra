@@ -23,8 +23,7 @@ params:
   github_token: ((github_token))
 
 run:
-  path: bash
-  args: [chmod 101 ./source/concourse/terraform/terraform.sh, source/concourse/terraform/terraform.sh]
+  path: source/concourse/terraform/terraform.sh
 
 #Premission denied, anything else is file not found
 #run:
