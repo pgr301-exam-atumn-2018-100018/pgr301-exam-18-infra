@@ -22,4 +22,4 @@ params:
   lock_timeout: 5m
   github_token: ((github_token))
 run:
-  path: "./source/concourse/terraform/terraform.sh"
+  path: ./pgr301-exam-18-infra/concourse/terraform/terraform.sh
