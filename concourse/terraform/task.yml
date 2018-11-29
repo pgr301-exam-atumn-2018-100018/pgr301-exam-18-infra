@@ -22,4 +22,4 @@ params:
   lock_timeout: 5m
   github_token: ((github_token))
 run:
-  path: ./terraform.sh
+  path: terraform.sh
