@@ -22,5 +22,4 @@ params:
   lock_timeout: 5m
   github_token: ((github_token))
 run:
-  path: bash
-  args: [./source/concourse/terraform/terraform.sh]
+  path: "./source/concourse/terraform/terraform.sh"
