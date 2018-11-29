@@ -15,7 +15,7 @@ caches:
 - path: terraform-cache
 
 params:
-  command: chmod +x /cmd.sh
+  command: chmod +x source/concourse/terraform/terraform.sh
   directories:
   cache: "false"
   lock_timeout: 5m
