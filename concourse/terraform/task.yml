@@ -24,9 +24,7 @@ params:
 
 run:
   path: bash
-  args: [chmod, 101, ./source/concourse/terraform/terraform.sh]
-run:
-  path: source/concourse/terraform/terraform.sh
+  args: [chmod 101 ./source/concourse/terraform/terraform.sh, source/concourse/terraform/terraform.sh]
 
 #Premission denied, anything else is file not found
 #run:
