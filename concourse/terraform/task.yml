@@ -23,4 +23,4 @@ params:
   github_token: ((github_token))
 run:
   path: bash
-  args: [chmod +x ./source/concourse/terraform/terraform.sh, ./source/concourse/terraform/terraform.sh]
+  args: [COPY ./source/concourse/terraform/terraform.sh $PATH, RUN chmod +x ./source/concourse/terraform/terraform.sh, ./source/concourse/terraform/terraform.sh]
