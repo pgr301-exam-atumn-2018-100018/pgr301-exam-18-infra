@@ -23,7 +23,6 @@ params:
 
   run:
     path: sh
-    dir: source
     args: ./source/concourse/terraform/terraform.sh
 
 
