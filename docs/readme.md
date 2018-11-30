@@ -42,6 +42,13 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 <a name="Reflections"></a>
 ## 3. Reflections
 
+In case there is any questions to the usernames used to commit on GitHub: 
+I, the candidate 100018, is the only human that has committed anything to the repositories. The Concourse bot has of course committed too, but this is expected.
+I have used two computers (home- and school computer), with different display names because I thought it would simplify the overview. 
+I noticed recently that it makes less sense with aliases because they don't directly link back to the profile of the user which can look very suspicious. 
+All contributors should appear under "Insights/Contributors", though, even if the Concourse bot does not appear there. Otherwise, runnig the "git log | grep Author: | sort | uniq" in the commandline in the repo folder shows that at least one of the candidate aliases has the same email.
+Nonetheless, I understand if this looks fishy, so I choose to highlight it and my confidence in it being resolved.
+
 ##### Infra:
 
 The infra-part of the project started off pretty good. I was confident because the assignment sounded similar to the exercises that was assigned in class. This soon turned around when it came to testing the pipeline. 
