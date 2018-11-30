@@ -13,7 +13,7 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 
 ##### Set up infrastructure:
 1. Replace the names and URIs the project. For simplicity, all name/URI variables have been tagged with "TODO", which will automatically pop up in the tab named "TODO" in the bottom of IntelliJ
-2. 
+2. Replace Heroku variables (optional).
 
 ##### Run the app manually:
 1. Stop any running applications that run on port 8080
