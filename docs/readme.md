@@ -44,7 +44,18 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 
 ##### Infra:
 Stuck on pipeline.yml for a while, got mixed up with use of infra/app in ci-file.
-Stills stuck on concourse pipeline, no idea why, but it seems the image didn't have access to run the terraform.sh file. After close 50 attempts on various fixed I landed on something that looked like a solution, but now the Concourse Pipeline asks for statuscake api key, even though I removed it from the project earlier because the pipeline said it didn't find the key (in credentials.yml).
+Still stuck on concourse pipeline, no idea why, but it seems the image didn't have access to run the terraform.sh file. After close 50 attempts on various fixed I landed on something that looked like a solution, but now the Concourse Pipeline asks for statuscake api key, even though I removed it from the project earlier because the pipeline said it didn't find the key (in credentials.yml).
+Build succeds now, after removing all statuscake-refrences.
+
+TODO:
+documentation
+ - Attempted features
+ - Reflections
+Failed tests fails pipeline
+Pipeline should continously deploy every commit on amster branch on app repo
+Other features
+check examionator walkthough
+Final go though, check for names, todos, fixmes etc.
 
 ##### On the app:
 I didn't expect to made an API for this exam so It caught me off guard and delayed the plans I had. 
