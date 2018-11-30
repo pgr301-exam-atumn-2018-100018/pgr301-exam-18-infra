@@ -1,5 +1,5 @@
 variable "app_prefix" {
-  default = ""
+  default = "exam"
 }
 
 variable "pipeline_name" {
