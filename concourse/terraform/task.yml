@@ -22,7 +22,7 @@ params:
   github_token: ((github_token))
 
 run:
-  path: sh
+  path: bash
   dir: source
   args:
     - -exc
