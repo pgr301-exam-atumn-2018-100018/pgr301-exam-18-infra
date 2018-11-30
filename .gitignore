@@ -4,4 +4,3 @@
 **/credentials*
 **/pipeline.yml
 **/provider_heroku.tf
-**/statuscake.tf

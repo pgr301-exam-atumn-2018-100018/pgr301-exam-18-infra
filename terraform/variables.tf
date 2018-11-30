@@ -3,5 +3,5 @@ variable "app_prefix" {
 }
 
 variable "pipeline_name" {
-  default = "100018-exam"
+  default = "pgr301-exam-100018"
 }
