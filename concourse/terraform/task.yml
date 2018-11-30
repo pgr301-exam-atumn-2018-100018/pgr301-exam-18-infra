@@ -23,7 +23,7 @@ params:
 
 run:
   path: bash
-  args: [source/concourse/terraform/terraform.sh]
+  args: [concourse/terraform/terraform.sh]
 
 
 #Premission denied, anything else is file not found
