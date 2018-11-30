@@ -3,7 +3,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: {repository: ubuntu} #hashicorp/terraform
+    repository: hashicorp/terraform
     tag: "0.11.8"
 
 inputs:
@@ -22,7 +22,11 @@ params:
   github_token: ((github_token))
 
 run:
-  path: ./source/concourse/terraform/terraform.sh
+  path: sh
+  dir: source
+  args:
+    - -exc
+      ./source/concourse/terraform/terraform.sh
 
 
 #Premission denied, anything else is file not found
