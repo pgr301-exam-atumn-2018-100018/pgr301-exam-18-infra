@@ -2,12 +2,12 @@ jobs:
 - name: ci
   plan:
   - aggregate:
-    - get: #TODO-replace-with-app
+    - get: pgr301-exam-18-app
       trigger: true
-    - get: #TODO-replace-with-infra
+    - get: pgr301-exam-18-infra
   - task: sync_heroku
-    file: #TODO-replace-with-app /concourse/heroku/heroku_sync.yml
-    input_mapping: {source: #TODO-replace-with-app}
+    file: pgr301-exam-18-infra/concourse/heroku/heroku_sync.yml
+    input_mapping: {source: pgr301-exam-18-app}
     params:
       app_name: ((heroku_app_name))
       heroku_email: ((heroku_email))
@@ -16,39 +16,36 @@ jobs:
 - name: infra
   plan:
   - aggregate:
-    - get: #TODO-replace-with-infra
+    - get: pgr301-exam-18-infra
       trigger: true
   - task: apply
-    file: #TODO-replace-with-infra /concourse/terraform/task.yml
-    input_mapping: {source: #TODO-replace-with-infra-name}
+    file: pgr301-exam-18-infra/concourse/terraform/task.yml
+    input_mapping: {source: pgr301-exam-18-infra}
     params:
       github_token: ((github_token))
       heroku_api_key: ((heroku_api_key))
+      statuscake_api_key: ((statuscake_api_key))
       command: apply
       directories: |
           terraform
 
-#  The with-state is an output from the apply task. It's a git repo with
-#  An updated terraform tfstate file.
-
-  - put: #TODO-replace-with-infra
+  - put: pgr301-exam-18-infra
     params:
       repository: with-state
       rebase: true
 
 resources:
 
-- name: #TODO-replace-with-app
+- name: pgr301-exam-18-app
   type: git
   source:
-      uri: #TODO-replace-with-app-git-uri
+      uri: git@github.com:pgr301-exam-atumn-2018-100018/pgr301-exam-18-app.git
       branch: master
       private_key: ((deploy_key_app))
 
-# Replace with your own repository
-- name: #TODO-replace-with-infra
+- name: pgr301-exam-18-infra
   type: git
   source:
-      uri: #TODO-replace-with-infra-git-uri
+      uri: git@github.com:pgr301-exam-atumn-2018-100018/pgr301-exam-18-infra.git
       branch: master
       private_key: ((deploy_key))
