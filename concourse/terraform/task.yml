@@ -20,14 +20,11 @@ params:
   cache: "false"
   lock_timeout: 5m
   github_token: ((github_token))
-  
+
   run:
     path: sh
     dir: source
-    args:
-      - -exc
-      - |
-        ./source/concourse/terraform/terraform.sh
+    args: ./source/concourse/terraform/terraform.sh
 
 
 #Premission denied, anything else is file not found
