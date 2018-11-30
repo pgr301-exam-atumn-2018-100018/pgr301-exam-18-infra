@@ -43,9 +43,16 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 ## 3. Reflections
 
 ##### Infra:
-Stuck on pipeline.yml for a while, got mixed up with use of infra/app in ci-file.
-Still stuck on concourse pipeline, no idea why, but it seems the image didn't have access to run the terraform.sh file. After close 50 attempts on various fixed I landed on something that looked like a solution, but now the Concourse Pipeline asks for statuscake api key, even though I removed it from the project earlier because the pipeline said it didn't find the key (in credentials.yml).
-Build succeds now, after removing all statuscake-refrences.
+
+The infra-part of the project started off pretty good. I was confident because the assignment sounded similar to the exercises that was assigned in class. This soon turned around when it came to testing the pipeline. 
+First off I had some issues because I put the name of the infra-repository in one of the fields which should have the name of the app-repository. The small error was simple to fix, though it took some time before I found where the error was.
+The second issue was much, much worse. concourse/terraform/task.yml, the file runs the shellscript "terraform.sh". For a while the error messages fluxed between "file not found" and "permission denied". 
+"File not found" is self explaining, but lack of experience with containers and how they ran made it slightly more difficult. In the end, with trial an error, as well as looking at some examples from the provided exam repository. 
+"Permission denied" was much worse to figure out. Scouring the internet I found a few people with similar issues, but none of them had the same setup with concourse and docker. Again, using trial end error, 
+with close to 50 attempts and a lot of pushing to GitHub (commits with "pathtest", "test" or simply a number can be ignored, mostly pushed for figuring this problem out) I found a was to run the script. 
+I still don't know why the file was denied permission, but I tried various ways of setting file read/write/executables, but ended up running the file though the terminal in the image (I think). 
+To make matters worse the internet was cut for 2 and a half days so I had limited access though shared wifi though my phone.
+Once it seemed like the pipeline found the fine and could execute it, the pipeline halted, prompting me for an API key for Statuscake. Simply removing anything that had to do with Statuscake fixed this, even though I had the key in my credentials-file (correct key name and value).
 
 TODO:
 documentation
