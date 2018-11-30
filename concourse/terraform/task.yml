@@ -21,7 +21,7 @@ params:
   lock_timeout: 5m
   github_token: ((github_token))
 run:
-  path: ./source/concourse/terraform/test.sh
+  path: ./source/concourse/terraform/terraform.sh
 
 #Premission denied, anything else is file not found
 #run:
