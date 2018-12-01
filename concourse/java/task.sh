@@ -6,3 +6,7 @@ export GREEN='\033[1;32m'
 export NC='\033[0m'
 export CHECK="√"
 export M2_LOCAL_REPO=".m2"
+
+mvn -f source/pom.xml install
+echo -e "${GREEN}${CHECK} Maven install${NC}"
+mvn -f test
