@@ -13,4 +13,9 @@ outputs:
   - name: jar-file
 
 run:
-  path: source/concourse/java/task.sh
+  path: sh
+    args:
+      - -exc
+      - |
+        source/concourse/java/task.sh
+        mvn test
