@@ -37,6 +37,7 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 <a name="AttemptedFeatures"></a>
 ## 2. Attempted Features
 
+Basic Pipeline
 
 
 <a name="Reflections"></a>
@@ -61,12 +62,21 @@ I still don't know why the file was denied permission, but I tried various ways 
 To make matters worse the internet was cut for 2 and a half days so I had limited access though shared wifi though my phone.
 Once it seemed like the pipeline found the fine and could execute it, the pipeline halted, prompting me for an API key for Statuscake. Simply removing anything that had to do with Statuscake fixed this, even though I had the key in my credentials-file (correct key name and value).
 
+In the later parts of getting the Basic Pipeline requirement to work, 
+I wasn't entirely sure what the last bullet point under Application was supposed to mean.
+The text reads: "Should any of the tests fail, the build should fail", where the of "tests" is clear, 
+referring to unit-tests in the bullet point above, however, what "build" isn't entirely clear. I originally thought it meant the pipeline build,
+but after some attempts trying to get it to work I'm grew more uncertain. I don't recall going though this is class. 
+The only references to testing I could find in the course assignments was in the course 9 assignments, being part of a 
+Docker run-command, building an application with no unit tests (example app from lessons 7 and 8).
+Due to this, and the context of the bullet point being under the application header, I assume this means that the Maven (mentioned in a bullet point above) 
+build on the machine should fail, not the pipeline. 
+
+
 TODO:
 documentation
  - Attempted features
  - Reflections
-Failed tests fails pipeline
-Pipeline should continously deploy every commit on amster branch on app repo
 Other features
 check examionator walkthough
 Final go though, check for names, todos, fixmes etc.
@@ -77,7 +87,7 @@ Anyways, since we've had other courses where we make APIs this semester I had so
 Since the other courses don't use Java I didn't actually use any code, just looked at the structure. 
 I did, however find a lot of guides on the internet I did draw inspiration and a few snippets of code from. 
 The links to these sites are of course listed under [References](#References)
-I also had to do some things to jerryrig the app toghether, that aren't in line with what we've been though is good code practise. 
+I also had to do some things to jerryrig the app together, that aren't in line with what we've been though is good code practise. 
 One example is that I used a test method to clear the data in the map (IMDB) in the @Before method. 
 Ideally you shouldn't rely on tests or network methods to perform utility operations like resetting variables or databases, but with API you sort of have to.
 Some of the test where the appropriate status code would be "201 created" results in an error, will fail since the status code is 200. 
