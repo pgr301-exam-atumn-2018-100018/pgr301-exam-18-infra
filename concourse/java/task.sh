@@ -8,5 +8,5 @@ export CHECK="√"
 export M2_LOCAL_REPO=".m2"
 
 mvn -f source/pom.xml install
-mvn test
+mvn -f test
 echo -e "${GREEN}${CHECK} Maven install${NC}"
