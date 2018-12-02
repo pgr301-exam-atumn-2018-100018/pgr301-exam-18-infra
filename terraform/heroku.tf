@@ -60,6 +60,6 @@ resource "heroku_pipeline_coupling" "production" {
 
 # Create a hosted graphite, and configure the app to use it
 resource "heroku_addon" "hostedgraphite" {
-    app = "${heroku_app_name.production.name}"
+    app = "${pipeline_name.production.name}"
     plan = "hostedgraphite"
 }
