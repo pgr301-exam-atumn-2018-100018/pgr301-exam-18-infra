@@ -17,7 +17,7 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 
 ##### Run the app manually:
 1. Stop any running applications that run on port 8080
-2. Run the Application class, generate target
+2. Run the Application class
 3. Maven: "spring-boot:run"
 4. Go to one of the endpoints listed below
 
@@ -29,16 +29,16 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
  - http://localhost:8080/delete-all
 
 ##### Testing:
-1. Run Application
-2. Maven: "spring-boot:run"
-3. Run tests
-
+1. Stop any running applications that run on port 8080
+2. Run Application
+3. Maven: "spring-boot:run"
+4. Run tests
 
 <a name="AttemptedFeatures"></a>
 ## 2. Attempted Features
 
 Basic Pipeline
-
+Overvåkning, varsling og Metrics 
 
 <a name="Reflections"></a>
 ## 3. Reflections
@@ -71,6 +71,12 @@ The only references to testing I could find in the course assignments was in the
 Docker run-command, building an application with no unit tests (example app from lessons 7 and 8).
 Due to this, and the context of the bullet point being under the application header, I assume this means that the Maven (mentioned in a bullet point above) 
 build on the machine should fail, not the pipeline. 
+
+Now that the project fulfils the requirement to "Basic Pipeline" I can work on feature to raise the grade.
+Considering it is only a few days to delivery, I'm probably limited to one, and in that case I choose the "Surveillance, warning, and metrics"
+It was a bit difficult getting started, not being used to the add-on, or even using add-ons on pipelines. I'm not entirely sure if I had the right idea, 
+but I'm sure I'm on the right track. One interesting incident with the website of hosted graphite, is that it seems like I broke the CSS, 
+with a big portion of the page displaying a pop-up guide to adding data that I can't remove. The mouse also click the wrong element, fault in the Y-axis.
 
 
 TODO:
