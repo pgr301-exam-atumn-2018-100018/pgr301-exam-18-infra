@@ -47,7 +47,8 @@ In case there is any questions to the usernames used to commit on GitHub:
 I, the candidate 100018, is the only human that has committed anything to the repositories. The Concourse bot has of course committed too, but this is expected.
 I have used two computers (home- and school computer), with different display names because I thought it would simplify the overview. 
 I noticed recently that it makes less sense with aliases because they don't directly link back to the profile of the user which can look very suspicious. 
-All contributors should appear under "Insights/Contributors", though, even if the Concourse bot does not appear there. Otherwise, runnig the "git log | grep Author: | sort | uniq" in the commandline in the repo folder shows that at least one of the candidate aliases has the same email.
+All contributors should appear under "Insights/Contributors", though, even if the Concourse bot does not appear there. 
+Otherwise, running the "git log | grep Author: | sort | uniq" in the commandline in the repo folder shows that at least one of the candidate aliases has the same email.
 Nonetheless, I understand if this looks fishy, so I choose to highlight it and my confidence in it being resolved.
 
 ##### Infra:
@@ -60,7 +61,9 @@ The second issue was much, much worse. concourse/terraform/task.yml, the file ru
 with close to 50 attempts and a lot of pushing to GitHub (commits with "pathtest", "test" or simply a number can be ignored, mostly pushed for figuring this problem out) I found a was to run the script. 
 I still don't know why the file was denied permission, but I tried various ways of setting file read/write/executables, but ended up running the file though the terminal in the image (I think). 
 To make matters worse the internet was cut for 2 and a half days so I had limited access though shared wifi though my phone.
-Once it seemed like the pipeline found the fine and could execute it, the pipeline halted, prompting me for an API key for Statuscake. Simply removing anything that had to do with Statuscake fixed this, even though I had the key in my credentials-file (correct key name and value).
+Once it seemed like the pipeline found the fine and could execute it, the pipeline halted, 
+prompting me for an API key for Statuscake. Simply removing anything that had to do with Statuscake fixed this, 
+even though I had the key in my credentials-file (correct key name and value).
 
 In the later parts of getting the Basic Pipeline requirement to work, 
 I wasn't entirely sure what the last bullet point under Application was supposed to mean.
@@ -73,17 +76,25 @@ Due to this, and the context of the bullet point being under the application hea
 build on the machine should fail, not the pipeline. 
 
 Now that the project fulfils the requirement to "Basic Pipeline" I can work on feature to raise the grade.
-Considering it is only a few days to delivery, I'm probably limited to one, and in that case I choose the "Surveillance, warning, and metrics"
-It was a bit difficult getting started, not being used to the add-on, or even using add-ons on pipelines. I'm not entirely sure if I had the right idea, 
-but I'm sure I'm on the right track. One interesting incident with the website of hosted graphite, is that it seems like I broke the CSS, 
-with a big portion of the page displaying a pop-up guide to adding data that I can't remove. The mouse also click the wrong element, fault in the Y-axis.
-
+Considering it is only a few days to delivery, I'm probably limited to one, and in that case I choose the 
+"Surveillance, warning, and metrics". It was a bit difficult getting started, not being used to the add-on, 
+or even using add-ons on pipelines. I'm not entirely sure if I had the right idea, 
+but I'm sure I'm on the right track. One interesting incident with the website of hosted graphite, 
+is that it seems like I broke the CSS, 
+with a big portion of the page displaying a pop-up guide to adding data that I can't remove. 
+The mouse also click the wrong element, fault in the Y-axis.
+By now I have managed to send data to HostedGraphite though TCP, which I'm not sure is what is the way it was 
+intended to be sent according to the assignment.
+I assume one is supposed to use the code in the assignment to report with, 
 
 TODO:
 documentation
  - Attempted features
  - Reflections
-Other features
+Metrics etc.
+ - 3 types
+ - report externally (probably)
+ - secrets in infra/.env-like file
 check examionator walkthough
 Final go though, check for names, todos, fixmes etc.
 
