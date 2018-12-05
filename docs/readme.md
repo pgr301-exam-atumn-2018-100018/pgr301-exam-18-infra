@@ -126,12 +126,12 @@ already have the TCP code that send a string I might as well keep it for bonus p
 I chose to implement meters, a counter, and a timer.
  - Meters: All API calls will effect the meter. This will record the total number of calls to the API, 
  along with calls per second. Very useful for tracking load and when one should increase number of servers though for example AWS.
-    See methods: all API methods.
+    - See methods: all API methods.
  - Counter: Simply counts how many items are currently in the list. Adding items increments, deleting decrements or removes all items.
-    See methods: addItem (increments counter), deleteItem (decrements item if item can be deleted), deleteAll (decrements with current value of counter (set counter to 0))
+    - See methods: addItem (increments counter), deleteItem (decrements item if item can be deleted), deleteAll (decrements with current value of counter (set counter to 0))
  - Timer: Records the time it takes to retrieve all data. Useful to know when one should prune the database or 
  implement pagination or similar buffering measures.
-    See methods: getList (records the total time the whole method takes)
+    - See methods: getList (records the total time the whole method takes)
     
 I realized I had mistaken some of the instructions, and going back to them simplified things a bit. 
 It seems to be working, sending data over TCP, though I went over the number of metrics I was allowed. 
@@ -139,9 +139,9 @@ It seems to be working, sending data over TCP, though I went over the number of 
 ![Metrics Graph in Hosted Graphite](img/hg-exam-graph.png)
  
 TODO:
-java.lang.System.getenv app hosted graphite secrets
-check examionator walkthough
-Final go though, check for names, todos, fixmes etc.
+- java.lang.System.getenv app hosted graphite secrets
+- check examionator walkthough
+- Final go though, check for names, todos, fixmes etc.
 
 <a name="References"></a>
 ## 4. References

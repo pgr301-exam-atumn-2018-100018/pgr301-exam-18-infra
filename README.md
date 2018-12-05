@@ -10,6 +10,6 @@ This is the infrastructure repository, which controls the pipeline and builds th
 
 [Assignment](docs/assignment.pdf)
 
-[Documentation](docs/README.md)
+[Documentation](docs/readme.md)
 
 [App](https://github.com/pgr301-exam-atumn-2018-100018/pgr301-exam-18-app)
