@@ -21,12 +21,12 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 3. Maven: "spring-boot:run"
 4. Go to one of the endpoints listed below
 
- - http://localhost:8080/add-item?item=Go skydiving
- - http://localhost:8080/get-list
- - http://localhost:8080/get-item?id=1
- - http://localhost:8080/update-item?id=1&item=Dance all the Fortnite dances
- - http://localhost:8080/delete-item?id=1
- - http://localhost:8080/delete-all
+ - [add-item, item=Go skydiving](http://localhost:8080/add-item?item=Go skydiving)
+ - [get-list](http://localhost:8080/get-list)
+ - [get-item, id=1](http://localhost:8080/get-item?id=1)
+ - [update-item, id=1, item=Dance all the Fortnite dances](http://localhost:8080/update-item?id=1&item=Dance all the Fortnite dances)
+ - [delete-item, id=1](http://localhost:8080/delete-item?id=1)
+ - [delete-all](http://localhost:8080/delete-all)
 
 ##### Testing:
 1. Stop any running applications that run on port 8080
@@ -34,11 +34,22 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 3. Maven: "spring-boot:run"
 4. Run tests
 
+##### Hosted Graphite:
+1. Go to [Hosted Graphite](https://www.hostedgraphite.com/) and make a profile (or link Heroku profile if you have one)
+2. Get the API key and host URL from the "Overview" tab on the left. Host URL can be found when you click "How do I send metrics?"
+under the API key. the URL looks like this "x.carbon.hostedgraphite.com" where "x" is a 8 char value. 
+Links to these fields can be found under the "TODO" tab in IntelliJ.
+3. In the App, add the values in the fields in getReporter method in GraphiteMetricsConfig.
+4. Run the app, do some API calls.
+5. Go back to [Hosted Graphite](https://www.hostedgraphite.com/app/metrics/) Search for "100018" 
+(or whatever you may have changed it to) in sendReportTcp method.
+6. View the metrics.
+
 <a name="AttemptedFeatures"></a>
 ## 2. Attempted Features
 
-Basis pipeline
-Overvåkning, varsling og Metrics 
+ - Basis pipeline
+ - Overvåkning, varsling og Metrics 
 
 <a name="Reflections"></a>
 ## 3. Reflections
@@ -72,10 +83,17 @@ The second issue was much, much worse. concourse/terraform/task.yml, the file ru
 "Permission denied" was much worse to figure out. Scouring the internet I found a few people with similar issues, but none of them had the same setup with concourse and docker. Again, using trial end error, 
 with close to 50 attempts and a lot of pushing to GitHub (commits with "pathtest", "test" or simply a number can be ignored, mostly pushed for figuring this problem out) I found a was to run the script. 
 I still don't know why the file was denied permission, but I tried various ways of setting file read/write/executables, but ended up running the file though the terminal in the image (I think). 
+
+![Permission denied in pipeline](img/terraform-permission-denied.png)
+
 To make matters worse the internet was cut for 2 and a half days so I had limited access though shared wifi though my phone.
 Once it seemed like the pipeline found the fine and could execute it, the pipeline halted, 
 prompting me for an API key for Statuscake. Simply removing anything that had to do with Statuscake fixed this, 
 even though I had the key in my credentials-file (correct key name and value).
+
+![Pipeline asks for Statuscake API key](img/prompted-for-statuscake-key.png)
+
+![Infra pipline first successful run](img/infra-success.png)
 
 In the later parts of getting the Basic Pipeline requirement to work, 
 I wasn't entirely sure what the last bullet point under Application was supposed to mean.
@@ -103,6 +121,8 @@ Since Hosted Graphite provided a webpage with remote metrics and "graphite host"
 I assumed part of the assignment was to report to this page. Now going forward I'm not entirely sure, but since I
 already have the TCP code that send a string I might as well keep it for bonus points.
 
+![Hosted Graphite first data sent over TCP](img/hg-tcp-frist-data.png)
+
 I chose to implement meters, a counter, and a timer.
  - Meters: All API calls will effect the meter. This will record the total number of calls to the API, 
  along with calls per second. Very useful for tracking load and when one should increase number of servers though for example AWS.
@@ -112,25 +132,22 @@ I chose to implement meters, a counter, and a timer.
  - Timer: Records the time it takes to retrieve all data. Useful to know when one should prune the database or 
  implement pagination or similar buffering measures.
     See methods: getList (records the total time the whole method takes)
- 
+    
+I realized I had mistaken some of the instructions, and going back to them simplified things a bit. 
+It seems to be working, sending data over TCP, though I went over the number of metrics I was allowed. 
+
+![Metrics Graph in Hosted Graphite](img/hg-exam-graph.png)
  
 TODO:
-documentation
- - Reflections
-Metrics etc.
- - report externally (probably)
- - secrets in infra/.env-like file
+java.lang.System.getenv app hosted graphite secrets
 check examionator walkthough
 Final go though, check for names, todos, fixmes etc.
 
 <a name="References"></a>
 ## 4. References
 
-
 ##### App references:
 
-General pointers to make API from Spring.io:
-https://spring.io/guides/gs/rest-service/
+General pointers to make API from [Spring](https://spring.io/guides/gs/rest-service/)
 
-setup method in BucketlistApiTest, from Semaphoreci.com:
-https://semaphoreci.com/community/tutorials/testing-rest-endpoints-using-rest-assured
+setup method in BucketlistApiTest, from [Semaphoreci](https://semaphoreci.com/community/tutorials/testing-rest-endpoints-using-rest-assured)
