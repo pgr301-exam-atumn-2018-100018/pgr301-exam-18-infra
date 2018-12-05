@@ -6,7 +6,7 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 2. [ Attempted Features ](#AttemptedFeatures)
 3. [ Reflections ](#Reflections)
 4. [ References ](#References)
-5. [ Future Changes ](#Future Changes)
+5. [ Future Changes ](#FutureChanges)
 
 
 <a name="Instructions"></a>
@@ -131,6 +131,13 @@ Docker run-command, building an application with no unit tests (example app from
 Due to this, and the context of the bullet point being under the application header, I assume this means that the Maven 
 (mentioned in a bullet point above) build on the machine should fail, not the pipeline. 
 
+All in all I think I did an OK job. Considering the setbacks and problems I had I would say I did a slightly-better-than-ok
+job. I didn't really expect to have that many setbacks, but I guess that's on me. As I'm sure the lecturer is aware of, 
+there are many components that can go wrong with pipelines, and setting them up for others to run on their computers can 
+lead to a lot of confusion. With this in mind I wrote the instructions after how I run the pipeline, tests, and so on,
+and hope for the best. I hope I explained most of my problem solving and what I understood the text in the assignment to mean,
+and that that can be incorporated in the next exam text.
+
 ##### Additional Features:
 
 Now that the project fulfils the requirement to "Basic Pipeline" I can work on feature to raise the grade.
@@ -176,8 +183,8 @@ General pointers to make API from [Spring](https://spring.io/guides/gs/rest-serv
 setup method in BucketlistApiTest, from [Semaphoreci](https://semaphoreci.com/community/tutorials/testing-rest-endpoints-using-rest-assured)
 
 
-<a name="Future Changes"></a>
-## 4. Future Changes
+<a name="FutureChanges"></a>
+## 5. Future Changes
 
 Once the grade for this exam is received, I will let 2 weeks to pass, in case there are some reason mine was graded 
 early or there are other students with extended time who are still working on their projects, before I transfer these
