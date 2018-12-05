@@ -6,15 +6,48 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 2. [ Attempted Features ](#AttemptedFeatures)
 3. [ Reflections ](#Reflections)
 4. [ References ](#References)
+5. [ Future Changes ](#Future Changes)
 
 
 <a name="Instructions"></a>
 ## 1. Instructions
 
+Note: These instructions are not meant to replace the examinators instructions or run though. They are for future usage 
+in case someone with little or no experience want to try for themselves.
+
 ##### Set up infrastructure:
 1. Replace the names and URIs the project. For simplicity, all name/URI variables have been tagged with "TODO", 
 which will automatically pop up in the tab named "TODO" in the bottom of IntelliJ.
 2. Replace Heroku variables (optional).
+
+##### Run the pipeline:
+1. Complete instructions above.
+2. Start Docker
+3. Navigate to the infra project in a terminal (Git Bash for example).
+4. $ docker-compose up -d
+5. $ fly --target tar login --concourse-url http://127.0.0.1:8080
+6. $ fly -t tar sp  -p exam-100018 -c concourse/pipeline.yml -l credentials.yml
+7. In you browser, go to [http://127.0.0.1:8080/teams/main/pipelines/exam-100018](http://127.0.0.1:8080/teams/main/pipelines/exam-100018)
+8. Click "login"
+9. In the hamburger menu in the top left, press the play-icon next to "exam-100018".
+10. If the pipelines does not start automatically, go to "infra" and click the "+" button in the top right.
+
+##### Hosted Graphite:
+1. Go to [Hosted Graphite](https://www.hostedgraphite.com/) and make a profile (or link Heroku profile if you have one)
+2. Add the addon to a project.
+3. Get the API key and host URL from the "Overview" tab on the left. Host URL can be found when you click "How do I send metrics?"
+under the API key. the URL looks like this "x.carbon.hostedgraphite.com" where "x" is a 8 char value. 
+Links to these fields can be found under the "TODO" tab in IntelliJ.
+4. In the App, add the values in the fields in getReporter method in GraphiteMetricsConfig.
+5. Run the app, do some API calls.
+6. Go back to [Hosted Graphites metrics page](https://www.hostedgraphite.com/app/metrics/) Search for "100018" 
+(or whatever you may have changed it to) in sendReportTcp method.
+7. View the metrics.
+
+##### Testing:
+1. Stop any running applications that run on port 8080
+2. Run Application
+3. Run tests
 
 ##### Run the app manually:
 1. Stop any running applications that run on port 8080
@@ -28,27 +61,13 @@ which will automatically pop up in the tab named "TODO" in the bottom of Intelli
  - [delete-item, id=1](http://localhost:8080/delete-item?id=1)
  - [delete-all](http://localhost:8080/delete-all)
 
-##### Testing:
-1. Stop any running applications that run on port 8080
-2. Run Application
-3. Run tests
-
-##### Hosted Graphite:
-1. Go to [Hosted Graphite](https://www.hostedgraphite.com/) and make a profile (or link Heroku profile if you have one)
-2. Get the API key and host URL from the "Overview" tab on the left. Host URL can be found when you click "How do I send metrics?"
-under the API key. the URL looks like this "x.carbon.hostedgraphite.com" where "x" is a 8 char value. 
-Links to these fields can be found under the "TODO" tab in IntelliJ.
-3. In the App, add the values in the fields in getReporter method in GraphiteMetricsConfig.
-4. Run the app, do some API calls.
-5. Go back to [Hosted Graphites metrics page](https://www.hostedgraphite.com/app/metrics/) Search for "100018" 
-(or whatever you may have changed it to) in sendReportTcp method.
-6. View the metrics.
 
 <a name="AttemptedFeatures"></a>
 ## 2. Attempted Features
 
  - Basis pipeline
  - Overvåkning, varsling og Metrics 
+
 
 <a name="Reflections"></a>
 ## 3. Reflections
@@ -145,11 +164,7 @@ I realized I had mistaken some of the instructions, and going back to them simpl
 It seems to be working, sending data over TCP, though I went over the number of metrics I was allowed. 
 
 ![Metrics Graph in Hosted Graphite](img/hg-exam-graph.png)
- 
-TODO:
-- java.lang.System.getenv app hosted graphite secrets
-- check examionator walkthough
-- Final go though, check for names, todos, fixmes etc.
+
 
 <a name="References"></a>
 ## 4. References
@@ -159,3 +174,12 @@ TODO:
 General pointers to make API from [Spring](https://spring.io/guides/gs/rest-service/)
 
 setup method in BucketlistApiTest, from [Semaphoreci](https://semaphoreci.com/community/tutorials/testing-rest-endpoints-using-rest-assured)
+
+
+<a name="Future Changes"></a>
+## 4. Future Changes
+
+Once the grade for this exam is received, I will let 2 weeks to pass, in case there are some reason mine was graded 
+early or there are other students with extended time who are still working on their projects, before I transfer these
+repositories to my main GitHub Account and delete the temporary anonymous exam account. 
+For this reason, there might be changes in URLs, reference-paths, or owner/collaborators in the coming months.
