@@ -37,7 +37,7 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 <a name="AttemptedFeatures"></a>
 ## 2. Attempted Features
 
-Basic Pipeline
+Basis pipeline
 Overvåkning, varsling og Metrics 
 
 <a name="Reflections"></a>
@@ -50,6 +50,18 @@ I noticed recently that it makes less sense with aliases because they don't dire
 All contributors should appear under "Insights/Contributors", though, even if the Concourse bot does not appear there. 
 Otherwise, running the "git log | grep Author: | sort | uniq" in the commandline in the repo folder shows that at least one of the candidate aliases has the same email.
 Nonetheless, I understand if this looks fishy, so I choose to highlight it and my confidence in it being resolved.
+
+##### On the app:
+I didn't expect to made an API for this exam so It caught me off guard and delayed the plans I had. 
+Anyways, since we've had other courses where we make APIs this semester I had some code I could lean on to fast track the development. 
+Since the other courses don't use Java I didn't actually use any code, just looked at the structure. 
+I did, however find a lot of guides on the internet I did draw inspiration and a few snippets of code from. 
+The links to these sites are of course listed under [References](#References)
+I also had to do some things to jerryrig the app together, that aren't in line with what we've been though is good code practise. 
+One example is that I used a test method to clear the data in the map (IMDB) in the @Before method. 
+Ideally you shouldn't rely on tests or network methods to perform utility operations like resetting variables or databases, but with API you sort of have to.
+Some of the test where the appropriate status code would be "201 created" results in an error, will fail since the status code is 200. 
+This is due to poor implementation of the API. Luckily though, the API is not the focus in the exam.
 
 ##### Infra:
 
@@ -75,6 +87,8 @@ Docker run-command, building an application with no unit tests (example app from
 Due to this, and the context of the bullet point being under the application header, I assume this means that the Maven (mentioned in a bullet point above) 
 build on the machine should fail, not the pipeline. 
 
+##### Additional Features:
+
 Now that the project fulfils the requirement to "Basic Pipeline" I can work on feature to raise the grade.
 Considering it is only a few days to delivery, I'm probably limited to one, and in that case I choose the 
 "Surveillance, warning, and metrics". It was a bit difficult getting started, not being used to the add-on, 
@@ -85,30 +99,29 @@ with a big portion of the page displaying a pop-up guide to adding data that I c
 The mouse also click the wrong element, fault in the Y-axis.
 By now I have managed to send data to HostedGraphite though TCP, which I'm not sure is what is the way it was 
 intended to be sent according to the assignment.
-I assume one is supposed to use the code in the assignment to report with, 
+Since Hosted Graphite provided a webpage with remote metrics and "graphite host"-value which looks like a URL, 
+I assumed part of the assignment was to report to this page. Now going forward I'm not entirely sure, but since I
+already have the TCP code that send a string I might as well keep it for bonus points.
 
+I chose to implement meters, a counter, and a timer.
+ - Meters: All API calls will effect the meter. This will record the total number of calls to the API, 
+ along with calls per second. Very useful for tracking load and when one should increase number of servers though for example AWS.
+    See methods: all API methods.
+ - Counter: Simply counts how many items are currently in the list. Adding items increments, deleting decrements or removes all items.
+    See methods: addItem (increments counter), deleteItem (decrements item if item can be deleted), deleteAll (decrements with current value of counter (set counter to 0))
+ - Timer: Records the time it takes to retrieve all data. Useful to know when one should prune the database or 
+ implement pagination or similar buffering measures.
+    See methods: getList (records the total time the whole method takes)
+ 
+ 
 TODO:
 documentation
- - Attempted features
  - Reflections
 Metrics etc.
- - 3 types
  - report externally (probably)
  - secrets in infra/.env-like file
 check examionator walkthough
 Final go though, check for names, todos, fixmes etc.
-
-##### On the app:
-I didn't expect to made an API for this exam so It caught me off guard and delayed the plans I had. 
-Anyways, since we've had other courses where we make APIs this semester I had some code I could lean on to fast track the development. 
-Since the other courses don't use Java I didn't actually use any code, just looked at the structure. 
-I did, however find a lot of guides on the internet I did draw inspiration and a few snippets of code from. 
-The links to these sites are of course listed under [References](#References)
-I also had to do some things to jerryrig the app together, that aren't in line with what we've been though is good code practise. 
-One example is that I used a test method to clear the data in the map (IMDB) in the @Before method. 
-Ideally you shouldn't rely on tests or network methods to perform utility operations like resetting variables or databases, but with API you sort of have to.
-Some of the test where the appropriate status code would be "201 created" results in an error, will fail since the status code is 200. 
-This is due to poor implementation of the API. Luckily though, the API is not the focus in the exam.
 
 <a name="References"></a>
 ## 4. References
