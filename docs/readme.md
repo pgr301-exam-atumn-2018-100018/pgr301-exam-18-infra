@@ -9,6 +9,13 @@ Exam repository for PGR301 at Westerdals OSLO ACT/Høyskolen Kristiania, Fall 20
 5. [ Future Changes ](#FutureChanges)
 
 
+[Assignment](assignment.pdf)
+
+[Application](https://github.com/pgr301-exam-atumn-2018-100018/pgr301-exam-18-app)
+
+[Infrastructure (this repository, frontpage)](https://github.com/pgr301-exam-atumn-2018-100018/pgr301-exam-18-infra)
+
+
 <a name="Instructions"></a>
 ## 1. Instructions
 
