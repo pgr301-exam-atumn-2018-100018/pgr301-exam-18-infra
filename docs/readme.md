@@ -40,7 +40,7 @@ under the API key. the URL looks like this "x.carbon.hostedgraphite.com" where "
 Links to these fields can be found under the "TODO" tab in IntelliJ.
 3. In the App, add the values in the fields in getReporter method in GraphiteMetricsConfig.
 4. Run the app, do some API calls.
-5. Go back to [Hosted Graphite](https://www.hostedgraphite.com/app/metrics/) Search for "100018" 
+5. Go back to [Hosted Graphites metrics page](https://www.hostedgraphite.com/app/metrics/) Search for "100018" 
 (or whatever you may have changed it to) in sendReportTcp method.
 6. View the metrics.
 
